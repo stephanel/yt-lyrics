@@ -1,0 +1,22 @@
+{
+    "name": "ytLyrics - Lyrics on YouTube",
+    "version": "1.0",
+    "description": "Find automatically lyrics while you watch videos on YouTube",
+    "author": "Stéphane Lasmartres",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "storage", 
+        "tabs"
+    ],
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "run_at": "document_start",
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
